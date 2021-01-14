@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { fetchWeather } from './api/fetchWeather';
+import { initWeather } from './global/globalVariables';
+import CityWeather from './components/CityWeather';
 
 function App() {
+
+  const [city, setCity] = useState('');
+  const [weather, setWeather] = useState(initWeather);
+
+  const search = async(e: React.KeyboardEvent<HTMLInputElement>) => {
+    if(e.key === 'Enter' && city){
+      const data = await fetchWeather(city);
+      if(data){
+        setWeather(data);
+      }
+      setCity('');
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-container">
+      <input type='text' className='search' placeholder="Search..."  value={city} 
+      onChange={(e) => setCity(e.target.value)} onKeyPress={(e) => search(e)}/>
+      {weather.main.temp && <CityWeather weather={weather}/>}
     </div>
   );
 }
