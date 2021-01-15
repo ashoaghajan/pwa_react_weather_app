@@ -1,24 +1,29 @@
 import axios from 'axios';
-import { WEATHER_URL, API_KEY } from '../global/globalVariables';
+import { API_KEY, WEATHER_URL, FORECAST_URL } from '../global/globalVariables';
+import { errorHandler } from '../global/globalFunctions';
 
 
 export const fetchWeather = async(town: string) => {
     try{
         const { data } = await axios.get(WEATHER_URL, {
-            params: { q: town, units: 'metric', APPID: API_KEY }
+            params: { q: town, units: 'metric', appid: API_KEY }
         });
-    
         return data
     }
     catch(err){
-        if(err.message.includes('404')){
-            alert('You have probably entered an invalid city name')
-        }
-        else if(err.message.includes('401')){
-            alert('Your API key is probably invalid.')
-        }
-        else{
-            console.log(err)
-        }
+        errorHandler(err)
+    }
+}
+
+
+export const fetchForecast = async(town: string) => {
+    try{
+        const { data } = await axios.get(FORECAST_URL, {
+            params: { q: town, appid: API_KEY }
+        });
+        return data
+    }
+    catch(err){
+        errorHandler(err)
     }
 }

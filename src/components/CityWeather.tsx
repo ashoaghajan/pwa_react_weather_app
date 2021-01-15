@@ -6,6 +6,7 @@ export interface CityWeatherProps {
 }
  
 const CityWeather: React.SFC<CityWeatherProps> = ({ weather }) => {
+
     return ( 
         <div className="city">
           <h2 className='city-name'>

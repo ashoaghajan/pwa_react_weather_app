@@ -40,7 +40,7 @@ html, body, #root {
   box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
 }
 
-p {
+.city p {
   margin-top: 10px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -77,6 +77,43 @@ p {
 }
 
 .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forecast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.forecast-day {
+  display: flex;
+  flex-direction: row;
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.forecast-temp {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2px;
+  color: #1e2432;
+  text-align: center;
+}
+
+.forecast-icon {
+  margin-top: 2px;
+  width: 50px;
+  height: 50px;
+}
+
+.forecast-info {
   display: flex;
   flex-direction: column;
   align-items: center;
