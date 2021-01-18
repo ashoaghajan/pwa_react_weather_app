@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_KEY, WEATHER_URL, FORECAST_URL } from '../global/globalVariables';
+import { API_KEY, WEATHER_URL, FORECAST_URL, geocodeToCity } from '../global/globalVariables';
 import { errorHandler } from '../global/globalFunctions';
 
 
@@ -25,5 +25,15 @@ export const fetchForecast = async(town: string) => {
     }
     catch(err){
         errorHandler(err)
+    }
+}
+
+export const fetchCityName = async(lat: number, long: number) => {
+    try{
+        const { data } = await axios.get(geocodeToCity + `?latitude=${lat}&longitude=${long}&localityLanguage=en`);
+        return data
+    }
+    catch(err){
+        console.log(err.message)
     }
 }
