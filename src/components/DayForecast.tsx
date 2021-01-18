@@ -6,10 +6,16 @@ export interface DayForecastProps {
 }
  
 const DayForecast: React.SFC<DayForecastProps> = ({ forecastItem: item }) => {
+    
+    const [day, time] = item.date.split(',');
+
     return ( 
         <div className="forecast-item">
             <div className="weekday">
-                {item.date}
+                {day.substr(0,3)}
+            </div>
+            <div className="weekday">
+                {time}
             </div>
             <div className="forecast-temp">
                 {Math.round(item.main.temp)}

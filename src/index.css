@@ -40,6 +40,17 @@ html, body, #root {
   box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
 }
 
+.forecast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding:0;
+  border-radius: 20px;
+  background: rgba(250, 250, 250, 0.85);
+  box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
+}
+
 .city p {
   margin-top: 10px;
   text-transform: uppercase;
@@ -92,31 +103,45 @@ html, body, #root {
 .forecast-day {
   display: flex;
   flex-direction: row;
+  margin: 2px;
+  padding: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
 }
 
 .forecast-item {
+  background-color: rgba(92, 103, 119, 0.472);
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid grey;
+  border-radius: 20px;
+  margin: 1px;
 }
 
 .forecast-temp {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-top: 2px;
+  margin-top: 1px;
   color: #1e2432;
   text-align: center;
 }
 
 .forecast-icon {
-  margin-top: 2px;
   width: 50px;
   height: 50px;
+  margin: -10px 0;
 }
 
 .forecast-info {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.weekday{
+  font-size: 14px;
+  padding: 1px;
 }
 
 @media only screen and (max-width: 600px) {

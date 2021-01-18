@@ -19,7 +19,7 @@ export const fetchWeather = async(town: string) => {
 export const fetchForecast = async(town: string) => {
     try{
         const { data } = await axios.get(FORECAST_URL, {
-            params: { q: town, appid: API_KEY }
+            params: { q: town, units: 'metric', appid: API_KEY }
         });
         return data
     }
