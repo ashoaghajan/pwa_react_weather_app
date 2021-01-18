@@ -12,8 +12,8 @@ function App() {
 
   return (
     <div className="main-container">
-      <input type='text' className='search' placeholder="Search..."  value={city} 
-      onChange={(e) => setCity(e.target.value)} onKeyPress={(e) => search(e)}/>
+      {!showForecast && <input type='text' className='search' placeholder="Search..."  value={city} 
+      onChange={(e) => setCity(e.target.value)} onKeyPress={(e) => search(e)}/>}
       {weather.main.temp && !showForecast && <CityWeather weather={weather}/>}
       {loading && <h1 style={{ color: 'white' }}>Loading data...</h1>}
       {forecast.city.name && showForecast && <Forecast forecast={forecast}/>}

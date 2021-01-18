@@ -11,8 +11,6 @@ const Forecast: React.SFC<ForecastProps> = ({ forecast }) => {
     const forecastObj = makeDaysObject(forecast);
     const forecastArray = makeDaysArray(forecastObj); 
 
-    console.log(forecastArray)
-
     return ( 
         <div className="forecast">
             <h2 className='forecast-city-name'>

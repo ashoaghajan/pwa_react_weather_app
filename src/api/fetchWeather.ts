@@ -24,7 +24,7 @@ export const fetchForecast = async(town: string) => {
         return data
     }
     catch(err){
-        errorHandler(err)
+        console.log(err.message)
     }
 }
 
