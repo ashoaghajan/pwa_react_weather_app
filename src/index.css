@@ -143,6 +143,18 @@ html, body, #root {
   font-size: 14px;
   padding: 1px;
 }
+.forecast-city-name {
+  font-size: 1em;
+  margin: 5px;
+}
+
+.forecast-city-name sup {
+  padding: 0.2em 0.6em;
+  margin-left: 0.2em;
+  border-radius: 30px;
+  color: #fff;
+  background: #ff8c00;
+}
 
 @media only screen and (max-width: 600px) {
   .search {

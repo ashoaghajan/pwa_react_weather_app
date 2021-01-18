@@ -15,7 +15,7 @@ const Forecast: React.SFC<ForecastProps> = ({ forecast }) => {
 
     return ( 
         <div className="forecast">
-            <h2 className='city-name'>
+            <h2 className='forecast-city-name'>
                 <span>{forecast.city.name}</span>
                 <sup>{forecast.city.country}</sup>
             </h2>
